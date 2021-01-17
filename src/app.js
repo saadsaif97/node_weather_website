@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const getWeatherInfo = require('./utils/get_weather_info')
 
 const app = express()
+const PORT = process.env.PORT || 3000
 
 // define path for express config
 const staticFilesDirectory = path.join(__dirname, '../public')
@@ -93,6 +94,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Listening on PORT: 3000')
+app.listen(PORT, () => {
+  console.log(`Listening on PORT: ${PORT}`)
 })
